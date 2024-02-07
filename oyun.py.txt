@@ -1,0 +1,34 @@
+import random
+
+def main():
+    print("Çocuklar İçin Matematik Oyunu")
+
+    while True:
+        # Rastgele sayılar seçme
+        num1 = random.randint(1, 75)
+        num2 = random.randint(1, 75)
+
+        # Doğru sonucu bulma
+        correct_answer = num1 + num2
+
+        # Soruyu sorma
+        answer = int(input(f"{num1} + {num2} kaçtır? "))
+
+        # Doğru cevabı kontrol etme
+        if answer == correct_answer:
+            print("Tebrikler! Doğru Cevap!")
+            celebrate()
+        else:
+            print(f"Üzgünüm, doğru cevap {correct_answer} idi. Tekrar dene.")
+
+        # Devam etmek istiyor musunuz?
+        play_again = input("Tekrar oynamak istiyor musunuz? (E/H): ")
+        if play_again.lower() != 'e':
+            print("Oyunu bitiriyorum. İyi günler!")
+            break
+
+def celebrate():
+    print("🎉 Havaifişekler Patladı! 🎉")
+
+if __name__ == "__main__":
+    main()
